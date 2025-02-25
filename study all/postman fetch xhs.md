@@ -1,0 +1,9 @@
+
+You need to add all of the request headers from the network request data to your Postman request. Go to the "Headers" tab in Postman and add the following key-value pairs:
+
+| Key | Value | | ------------------------- | ----------------------------------------------------------------------------------------------------- | | `accept` | `application/json, text/plain, */*` | | `accept-encoding` | `gzip, deflate, br, zstd` | | `accept-language` | `zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7` | | `content-length` | `<redacted>` The request is most likely have no content, or the content is set in the `Body` of the request.| | `content-type` | `application/json;charset=UTF-8` | | `cookie` | `<redacted>` (This is very important for authenticated requests. You'll need to use the cookie for user identity.) | | `origin` | `https://www.xiaohongshu.com` | | `referer` | `https://www.xiaohongshu.com/` | | `sec-ch-ua` | `<redacted>` | | `sec-ch-ua-mobile` | `<redacted>` | | `sec-ch-ua-platform` | `<redacted>` | | `sec-fetch-dest` | `<redacted>` | | `sec-fetch-mode` | `<redacted>` | | `sec-fetch-site` | `<redacted>` | | `user-agent` | `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36` | | `x-b3-traceid` | `<redacted>` | | `x-mns` | `<redacted>` | | `x-s` | `<redacted>` | | `x-s-common` | `<redacted>` | | `x-t` | `<redacted>` | | `x-xray-traceid` | `<redacted>` |
+
+- **Important:**
+    - Replace the `<redacted>` values with the actual values.
+    - The `cookie` header is critical if the API is protected or requires user authentication. You must use the correct cookie value.
+    - It is possible that `x-s` `x-s-common` `x-t` are generated dynamically based on request time and other parameters. If you cannot get the right values, you may need to research how they are generated.
